@@ -2,6 +2,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import serverless from "serverless-http";
 //local imports
 import connectDb from "../config/db.js";
 import authRoutes from "../routes/auth/authRoutes.js";
@@ -36,4 +37,4 @@ app.use("/api/test", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
-export default app;
+export default serverless(app);
