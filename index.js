@@ -8,6 +8,8 @@ import connectDb from "../config/db.js";
 import authRoutes from "../routes/auth/authRoutes.js";
 import taskRoutes from "../routes/taskRoutes.js";
 
+const PORT = process.env.PORT;
+
 //database connection
 connectDb();
 
@@ -37,4 +39,6 @@ app.use("/api/test", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
-export default serverless(app);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
