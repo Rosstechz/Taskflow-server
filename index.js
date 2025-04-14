@@ -2,11 +2,11 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import serverless from "serverless-http";
+
 //local imports
-import connectDb from "../config/db.js";
-import authRoutes from "../routes/auth/authRoutes.js";
-import taskRoutes from "../routes/taskRoutes.js";
+import connectDb from "./config/db.js";
+import authRoutes from "./routes/auth/authRoutes.js";
+import taskRoutes from "./routes/taskRoutes.js";
 
 const PORT = process.env.PORT;
 
