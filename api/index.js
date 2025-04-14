@@ -36,14 +36,4 @@ app.use("/api/test", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
-console.log(process.env.NODE_ENV);
-
-//listener
-if (process.env.NODE_ENV !== "production") {
-  const PORT = process.env.PORT || 5001;
-  app.listen(PORT, () => {
-    console.log(`Server Running on port ${PORT}`);
-  });
-}
-
 export default app;
